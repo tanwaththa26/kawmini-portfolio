@@ -1,0 +1,60 @@
+/* Placeholder for style.css */
+
+:root {
+    --color-primary: #556B2F; /* Dark Olive Green */
+    --color-accent: #FFC000; /* Gold/Yellow */
+    --color-text: #333;
+    --color-light: #F8F8F8;
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Hero Section Layout */
+.hero-section {
+    display: flex; /* Use flexbox for side-by-side content */
+    align-items: center;
+    padding: 100px 5%;
+}
+
+/* Image Styling */
+.profile-image {
+    width: 350px; /* Adjust size */
+    height: 350px;
+    border-radius: 50%; /* Circular crop */
+    object-fit: cover;
+    /* You would use a background and positioning for the surrounding yellow circle */
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primary {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+/* Service Cards Layout */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border-top: 3px solid var(--color-accent);
+}

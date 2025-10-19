@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.G.K.K.H Tanwaththa - Portfolio Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /*
+        ====================================================
+        CSS STYLING - BEAUTIFUL MODERN PORTFOLIO DESIGN
+        ====================================================
+        */
+        :root {
+            --color-primary: #1C3A35;
+            --color-accent: #FFC000;
+            --color-text-dark: #333333;
+            --color-bg-light: #F8F8F8;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        /* Base & Reset */
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg-light);
+            line-height: 1.6;
+            scroll-behavior: smooth; 
+        }
+
+        h1, h2, h3 {
+            color: var(--color-text-dark);
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+        }
+
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .highlight {
+            color: var(--color-accent);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        /* ------------------ Header & Navigation ------------------ */
+        .main-header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            color: white;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .contact-btn {
+            background-color: var(--color-accent);
+            color: var(--color-primary) !important;
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* ------------------ Hero Section (The Beauty) ------------------ */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            gap: 50px;
+            background-color: white;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            line-height: 1.1;
+            margin: 15px 0 25px;
+            font-weight: 800;
+        }
+
+        .greeting {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn.primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .btn.secondary {
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Image Container & Gold Ring */
+        .hero-image-container {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            flex-shrink: 0;
+            margin-right: 50px;
+        }
+
+        /* The Gold Ring (Pseudo-element) */
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 15px solid var(--color-accent);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            display: block;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* ------------------ Achievements Section (Modern Grid) ------------------ */
+        .achievements-section {
+            background-color: var(--color-bg-light);
+        }
+        
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--color-accent);
+            cursor: pointer;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* ------------------ Participated Section (EYE-CATCHING IMAGE OVERLAY GRID) ------------------ */
+        .participated-section {
+            background-color: white;
+        }
+
+        .participation-grid {
+            /* === LAYOUT CONTROL HERE: SETTING TO 3 CARDS PER ROW === */
+            grid-template-columns: repeat(3, 1fr); 
+            /* To use one-by-one: grid-template-columns: 1fr; */
+            /* To use flexible 4-column: grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+            display: grid;
+            gap: 20px; 
+        }
+
+        .participation-item {
+            background: #fff; 
+            min-height: 250px; 
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .participation-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .participation-item .participation-image {
+            width: 100%;
+            height: 100%; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+        
+        /* Text Overlay Container */
+        .participation-text-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0));
+            color: white;
+            transition: background 0.6s ease;
+            min-height: 100px;
+        }
+        
+        /* Initial state: Text content is subtle */
+        .participation-text-content p {
+            opacity: 0;
+            max-height: 0;
+            transition: opacity 0.4s ease, max-height 0.4s ease;
+        }
+
+        /* Hover effect: Zoom image and reveal description */
+        .participation-item:hover .participation-image {
+            transform: scale(1.1);
+            filter: brightness(0.6);
+        }
+        
+        .participation-item:hover .participation-text-content {
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .participation-item:hover .participation-text-content p {
+            opacity: 1;
+            max-height: 100px;
+        }
+
+        .participation-item h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* ------------------ Contact Section ------------------ */
+        .contact-section {
+            background-color: var(--color-bg-light);
+        }
+
+        .contact-layout {
+            display: flex;
+            gap: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form {
+            flex: 2;
+        }
+        .contact-details {
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* ------------------ Modal/Lightbox CSS ------------------ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 36px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        /* --- CAROUSEL STYLES --- */
+        .modal-gallery {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background: var(--color-accent);
+        }
+
+        .carousel-btn.prev {
+            left: 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .carousel-btn.next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+
+        /* ------------------ Responsive Adjustments ------------------ */
+        @media (max-width: 900px) {
+            .hero-section, .about-grid, .contact-layout {
+                flex-direction: column;
+                text-align: center;
+            }
+            .gallery-image {
+                height: 250px;
+            }
+            /* Mobile always forces single column for readability */
+            .participation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">T.G.K.K.H Tanwaththa</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#university">University Achievements</a></li>
+                <li><a href="#participated">Participated Things</a></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <p class="greeting">Welcome!</p>
+            <h1>I'm <span class="highlight">T.G.K.K.H Tanwaththa</span>,<br>Student at <span class="university-name">University of Kelaniya.</span></h1>
+            <p class="bio-short">Detail-oriented student seeking to apply strong analytical and design skills in **[Replace this: Your Field, e.g., Mass Communication]**.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn primary">Discover My Story</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="/Users/hima/Desktop/My_EPortfolio/images/WhatsApp Image 2025-02-16 at 19.08.55-modified.png" alt="T.G.K.K.H Tanwaththa" class="profile-image">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">Who is <span class="highlight">T.G.K.K.H Tanwaththa</span>?</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Hello! I am currently pursuing my degree in **[Replace this: Your Degree Name]** at the University of Kelaniya. My academic journey has equipped me with a strong foundation in **[Replace this: Skill 1]** and **[Replace this: Skill 2]**.</p>
+                <p>I am passionate about **[Replace this: Hobby/Interest]** and actively seek opportunities to merge technical excellence with creative problem-solving. My goal is to **[Replace this: Your Career Goal]**.</p>
+            </div>
+            <div class="about-image">
+                 <img src="[Replace this: Image of University of Kelaniya or you working]" alt="University of Kelaniya Context" class="context-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="university" class="achievements-section">
+        <h2 class="section-title">University of Kelaniya <span class="highlight">Achievements</span></h2>
+        <div class="achievements-list">
+            <div class="achievement-card" data-achievement="dewas_conference">
+                <span class="card-icon">🏆</span>
+                <h3>Dew-as International Conference</h3>
+                <p>Actively participated and contributed to the proceedings of the Dew-as International Conference, gaining exposure to global academic research.</p>
+            </div>
+            <div class="achievement-card" data-achievement="leo_club">
+                <span class="card-icon">🥇</span>
+                <h3>Leo Club Membership</h3>
+                <p>An engaged member of the Leo Club, participating in community service projects and developing leadership skills.</p>
+            </div>
+            <div class="achievement-card" data-achievement="zero_plastic">
+                <span class="card-icon">📚</span>
+                <h3>Zero Plastic Initiative</h3>
+                <p>Contributed to the campus-wide 'Zero Plastic' campaign, promoting environmental sustainability within the university community.</p>
+            </div>
+            <div class="achievement-card" data-achievement="child_protection">
+                <span class="card-icon">🛡️</span>
+                <h3>Child Protection Awareness</h3>
+                <p>Volunteered in the Child Protection awareness program, helping to educate the public and peers on critical social issues.</p>
+            </div>
+        </div> 
+    </section>
+
+    <section id="participated" class="participated-section">
+        <h2 class="section-title">Professional & Community <span class="highlight">Participation</span></h2>
+        <div class="participation-grid">
+
+            <div class="participation-item" data-event="pretona">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="Pretona 2023" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Pretona 2023 (Fundraising)</h3>
+                    <p>Actively involved in the **Fundraising Team** for Pretona 2023, contributing to the successful achievement of financial goals for the event.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="awarding_ceremony">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="Awarding Ceremony 2023" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Event Management Team - Diploma Awarding Ceremony 2023</h3>
+                    <p>Served on the **Event Management Team** for the Diploma and Higher Diploma Awarding Ceremony, ensuring smooth logistical operations.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="kris_conference_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="National Conference KRIS" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝘾𝙤𝙣𝙛𝙚𝙧𝙚𝙣𝙘𝙚 𝙀𝙭𝙥𝙡𝙤𝙧𝙚𝙨 𝘿𝙚𝙘𝙡𝙞𝙣𝙞𝙣𝙜 𝙈𝙖𝙡𝙚 𝙀𝙣𝙧𝙤𝙡𝙢𝙚𝙣𝙩 (KRIS)</h3>
+                    <p>Contributed to the organization of the national conference focusing on male enrollment in Higher Education, showcasing strong event support skills.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="inauguration_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="Inauguration Ceremony 2024" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Inauguration Ceremony - Diploma Course 2024</h3>
+                    <p>Assisted in the successful launch and execution of the Inauguration Ceremony for the Diploma Course in Mass Communication and Public Relations.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="vegas_night_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="Vegas Night" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Vegas Night</h3>
+                    <p>Key participant in the organization and logistics of the "Vegas Night" social event, focusing on student engagement and venue setup.</p>
+                </div>
+            </div>
+            
+            <div class="participation-item" data-event="pr_workshop_future_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="PR Workshop" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Public Relations Workshop for Future Success</h3>
+                    <p>Involved in organizing an attractive workshop designed to improve key Public Relations and Media Management skills for future success.</p>
+                </div>
+            </div>
+            
+            <div class="participation-item" data-event="radio_vinisa_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="Unique Radio Association" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Unique Radio Association (විනිස)</h3>
+                    <p>Active member of the 'Unique Radio Association' of the Department of Mass Communication, involved in program coordination.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="sanjanaani_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="සංජනනි" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>සංජනනි (Harusara, School Workshop)</h3>
+                    <p>Contributed to the successful execution of the 'සංජනනි' initiative, including the 'Harusara' school workshop program.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="ape_handaawa_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="අපේ හැන්දෑව" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>අපේ හැන්දෑව - Main Dancing Coordinator</h3>
+                    <p>Served as the **Main Dancing Coordinator** for 'අපේ හැන්දෑව', managing performers and choreographing key segments of the cultural event.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="pr_campaigning_event">
+                <img src="/Users/hima/Desktop/My_EPortfolio/images/IMG_2478.png" alt="PR Campaigning Workshop" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>"Strategic Public Relations Planning and Campaigning" Workshop</h3>
+                    <p>Provided logistical and promotional support for this high-level workshop organized by the PR & Media Management Students' Association.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="youth_camp_event">
+                <img src="[Image Placeholder: Youth Camp Group Photo]" alt="Youth Camp 2024" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Youth Camp 2024</h3>
+                    <p>Participant and organizer in the annual "Youth Camp" focusing on leadership development and community building exercises.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="book_donation_event">
+                <img src="[Image Placeholder: Book Donation Photo]" alt="Book Donation" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Book Donation to University of Kelaniya Library by Sirasa Gammadda Project ✅</h3>
+                    <p>Assisted in the coordination and logistics of this significant book donation event, strengthening university resources.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="pradeepa_event">
+                <img src="[Image Placeholder: PRaදීප Event Photo]" alt="PRaදීප" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>PRaදීප🪔 ❤️📚</h3>
+                    <p>Involved in the PRaදීප initiative, a project dedicated to promoting **[Replace this: Specify the main goal, e.g., literacy/community outreach]**.</p>
+                </div>
+            </div>
+
+            <div class="participation-item" data-event="luck_fm_event">
+                <img src="[Image Placeholder: Luck FM Anniversary Photo]" alt="Luck FM" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>Luck FM 16th Anniversary Day</h3>
+                    <p>Participated in the event organization and promotion for the 16th Anniversary celebration of Luck FM radio.</p>
+                </div>
+            </div>
+            
+            <div class="participation-item" data-event="dumbera_padura_event">
+                <img src="[Image Placeholder: ඳුම්බර පැදුර Photo]" alt="ඳුම්බර පැදුර" class="participation-image">
+                <div class="participation-text-content">
+                    <h3>ඳුම්බර පැදුර (Cultural Event)</h3>
+                    <p>A key member of the team responsible for managing and coordinating the cultural event 'ඳුම්බර පැදුර'.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <div class="contact-layout">
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h3>My Details</h3>
+                <p>📧 Email: **[Replace this: your.email@std.kln.ac.lk]**</p>
+                <p>📞 Phone: **[Replace this: +94 7X XXX XXXX]**</p>
+                <p>🔗 LinkedIn: **[Replace this: /in/yourprofile]**</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; background-color: var(--color-primary); color: white; margin-top: 0;">Designed and Developed by T.G.K.K.H Tanwaththa | University of Kelaniya Student</p>
+    </footer>
+
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            
+            <div id="modal-image-gallery" class="modal-gallery">
+                <div id="carouselTrack" class="carousel-track">
+                    </div>
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            
+            <a id="modal-link" href="#" target="_blank" class="btn primary" style="display: none; width: 200px; margin: 20px auto 0; text-align: center;">View More Details (Optional Link)</a>
+        </div>
+    </div>
+    
+    <script>
+        // Data structure containing information for all events and achievements
+        const eventData = {
+            // --- University Achievements ---
+            dewas_conference: {
+                title: "Dew-as International Conference",
+                description: "This conference provided a platform for international research exchange. My involvement included abstract review assistance and managing presentation schedules.",
+                images: [
+                    "[Image Placeholder: Dew-as Conference Photo 1]",
+                    "[Image Placeholder: Dew-as Conference Photo 2]",
+                    "[Image Placeholder: Dew-as Conference Certificate]"
+                ]
+            },
+            leo_club: {
+                title: "Leo Club Membership",
+                description: "As an active Leo Club member, I spearheaded several community service initiatives, including environmental clean-ups and blood donation drives, fostering teamwork and social responsibility.",
+                images: [
+                    "[Image Placeholder: Leo Club Activity Photo 1]",
+                    "[Image Placeholder: Leo Club Activity Photo 2]"
+                ]
+            },
+            zero_plastic: {
+                title: "Zero Plastic Initiative",
+                description: "I was part of the core team that launched the 'Zero Plastic' campaign on campus. Our efforts led to a significant reduction in single-use plastic, documented in these awareness campaign photos.",
+                images: [
+                    "[Image Placeholder: Zero Plastic Campaign Photo 1]",
+                    "[Image Placeholder: Zero Plastic Poster]"
+                ]
+            },
+            child_protection: {
+                title: "Child Protection Awareness Program",
+                description: "Contributed to public awareness sessions and educational material development for child protection. These images highlight community engagement efforts and educational workshops.",
+                images: [
+                    "[Image Placeholder: Child Protection Workshop Photo 1]",
+                    "[Image Placeholder: Child Protection Leaflet]"
+                ]
+            },
+
+            // --- Participated Events ---
+            pretona: {
+                title: "Pretona 2023 (Fundraising)",
+                description: "This project was a major fundraising success! I managed key donor relations and helped coordinate the financial tracking, ensuring transparency and accountability. View photos from the final event and the team in action!",
+                images: [
+                    "[Image Placeholder: Pretona Photo 1]",
+                    "[Image Placeholder: Pretona Photo 2]",
+                    "[Image Placeholder: Pretona Photo 3]",
+                    "[Image Placeholder: Pretona Photo 4]" 
+                ]
+            },
+            awarding_ceremony: {
+                title: "Event Management Team - Diploma Awarding Ceremony 2023",
+                description: "A detailed look at the Awarding Ceremony. My role in the event management team involved coordinating seating, delegate registration, and post-event cleanup.",
+                images: [
+                    "[Image Placeholder: Ceremony Photo 1]",
+                    "[Image Placeholder: Ceremony Photo 2]",
+                    "[Image Placeholder: Ceremony Photo 3]"
+                ]
+            },
+            kris_conference_event: {
+                title: "National Conference on Declining Male Enrolment (KRIS)",
+                description: "I provided essential support for speaker management and venue setup for this significant national conference. My contribution helped ensure a professional environment for discussions on this critical social issue.",
+                images: [
+                    "[Image Placeholder: KRIS Conference Event Photo 1]",
+                    "[Image Placeholder: KRIS Conference Event Photo 2]"
+                ]
+            },
+            inauguration_event: {
+                title: "Inauguration Ceremony - Diploma Course 2024",
+                description: "Instrumental in the inaugural ceremony of the new Diploma Course. My role focused on media liaison and ensuring all presentation elements ran flawlessly.",
+                images: [
+                    "[Image Placeholder: Inauguration Event Photo 1]",
+                    "[Image Placeholder: Inauguration Event Photo 2]",
+                    "[Image Placeholder: Inauguration Event Photo 3]"
+                ]
+            },
+            vegas_night_event: {
+                title: "Vegas Night (Social Event)",
+                description: "Managed the décor and entertainment logistics for the 'Vegas Night' student social. A great opportunity to practice event budgeting and creative direction.",
+                images: [
+                    "[Image Placeholder: Vegas Night Event Photo 1]",
+                    "[Image Placeholder: Vegas Night Event Photo 2]"
+                ]
+            },
+            pr_workshop_future_event: {
+                title: "Public Relations Workshop for Future Success",
+                description: "Assisted the main organizers by handling attendee registration and preparing workshop materials. The workshop focused on current industry practices.",
+                images: [
+                    "[Image Placeholder: PR Workshop Event Photo 1]",
+                    "[Image Placeholder: PR Workshop Event Photo 2]"
+                ]
+            },
+            radio_vinisa_event: {
+                title: "Unique Radio Association (විනිස)",
+                description: "Active contributor to 'විනිස' programs, specializing in content research and script writing for several successful radio features.",
+                images: [
+                    "[Image Placeholder: Radio Vinisa Event Photo 1]"
+                ]
+            },
+            sanjanaani_event: {
+                title: "සංජනනි (Harusara, School Workshop)",
+                description: "A community outreach initiative focusing on school workshops. I was involved in teaching and mentoring sessions for high school students.",
+                images: [
+                    "[Image Placeholder: Sanjanaani Event Photo 1]",
+                    "[Image Placeholder: Sanjanaani Event Photo 2]"
+                ]
+            },
+            ape_handaawa_event: {
+                title: "අපේ හැන්දෑව - Main Dancing Coordinator",
+                description: "A leadership role in cultural events! I coordinated all dancing troupes, managed rehearsals, and oversaw the stage performance schedule for 'අපේ හැන්දෑව'.",
+                images: [
+                    "[Image Placeholder: Ape Handaawa Event Photo 1]",
+                    "[Image Placeholder: Ape Handaawa Event Photo 2]",
+                    "[Image Placeholder: Ape Handaawa Event Photo 3]"
+                ]
+            },
+            pr_campaigning_event: {
+                title: "Strategic Public Relations Planning and Campaigning Workshop",
+                description: "Served as a volunteer coordinator during this highly technical PR workshop, facilitating interactions between professionals and students.",
+                images: [
+                    "[Image Placeholder: PR Campaigning Event Photo 1]",
+                    "[Image Placeholder: PR Campaigning Event Photo 2]"
+                ]
+            },
+            youth_camp_event: {
+                title: "Youth Camp 2024",
+                description: "Participated as a team leader in the annual Youth Camp, organizing outdoor activities and team-building exercises that promoted leadership and unity.",
+                images: [
+                    "[Image Placeholder: Youth Camp Event Photo 1]",
+                    "[Image Placeholder: Youth Camp Event Photo 2]"
+                ]
+            },
+            book_donation_event: {
+                title: "Book Donation by Sirasa Gammadda Project",
+                description: "Assisted the university library in receiving and cataloging the large donation from the Sirasa Gammadda Project, an important community resource event.",
+                images: [
+                    "[Image Placeholder: Book Donation Event Photo 1]"
+                ]
+            },
+            pradeepa_event: {
+                title: "PRaදීප🪔 ❤️📚",
+                description: "A passionate involvement in the PRaදීප initiative, focusing on literacy promotion and resource collection for underserved communities.",
+                images: [
+                    "[Image Placeholder: PRaදීප Event Photo 1]",
+                    "[Image Placeholder: PRaදීප Event Photo 2]"
+                ]
+            },
+            luck_fm_event: {
+                title: "Luck FM 16th Anniversary Day",
+                description: "Assisted the team in organizing the celebration logistics and promotional activities for the radio station's 16th anniversary.",
+                images: [
+                    "[Image Placeholder: Luck FM Event Photo 1]"
+                ]
+            },
+            dumbera_padura_event: {
+                title: "ඳුම්බර පැදුර (Cultural Event)",
+                description: "Key contributions to the successful staging of the 'ඳුම්බර පැදුර' cultural event, including stage management and performer coordination.",
+                images: [
+                    "[Image Placeholder: ඳුම්බර පැදුර Event Photo 1]",
+                    "[Image Placeholder: ඳුම්බර පැදුර Event Photo 2]"
+                ]
+            }
+        };
+
+        // --- Modal & Carousel JS Logic ---
+        const modal = document.getElementById("projectModal");
+        const closeBtn = document.querySelector(".close-btn");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDescription = document.getElementById("modal-description");
+        const carouselTrack = document.getElementById("carouselTrack");
+        const modalLink = document.getElementById("modal-link");
+        
+        let currentSlide = 0;
+        let totalSlides = 0;
+
+        // Function to update the carousel position
+        window.showSlide = function(n) {
+            currentSlide = (n + totalSlides) % totalSlides;
+            const offset = -currentSlide * 100;
+            carouselTrack.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Function to move the carousel
+        window.changeSlide = function(n) {
+            showSlide(currentSlide + n);
+        }
+        
+        // Function to open the modal
+        function openModal(data) {
+            modalTitle.textContent = data.title;
+            modalDescription.textContent = data.description;
+            
+            // 1. Clear previous content
+            carouselTrack.innerHTML = ''; 
+
+            // 2. Set up new carousel slides
+            totalSlides = data.images.length;
+            currentSlide = 0;
+
+            if (totalSlides === 0) {
+                carouselTrack.innerHTML = '<p style="padding: 20px; text-align: center;">No images available for this entry.</p>';
+            } else {
+                data.images.forEach(url => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('carousel-slide');
+                    slide.innerHTML = `<img src="${url}" alt="${data.title}" class="gallery-image">`;
+                    carouselTrack.appendChild(slide);
+                });
+                showSlide(0);
+            }
+            
+            // 3. Set the optional link and arrow visibility
+            const showArrows = totalSlides > 1;
+            document.querySelector('.carousel-btn.prev').style.display = showArrows ? 'block' : 'none';
+            document.querySelector('.carousel-btn.next').style.display = showArrows ? 'block' : 'none';
+
+            if (data.link) {
+                modalLink.href = data.link;
+                modalLink.style.display = "block";
+            } else {
+                modalLink.style.display = "none";
+            }
+
+            // 4. Display the modal
+            modal.style.display = "block";
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners for closing the modal
+        closeBtn.onclick = closeModal;
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Attach click listeners to all participation items AND achievement cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAttach = [
+                { selector: '.participation-item', dataAttr: 'data-event' },
+                { selector: '.achievement-card', dataAttr: 'data-achievement' }
+            ];
+
+            elementsToAttach.forEach(config => {
+                const elements = document.querySelectorAll(config.selector);
+                elements.forEach(el => {
+                    const key = el.getAttribute(config.dataAttr);
+                    if (key && eventData[key]) {
+                        el.onclick = function() {
+                            openModal(eventData[key]);
+                        };
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
